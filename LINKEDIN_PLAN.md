@@ -1,5 +1,5 @@
 # LinkedIn Posting Plan - FoodForDevs Project
-## 6-Day Content Strategy
+## 9-Day Content Strategy
 
 ---
 
@@ -20,6 +20,12 @@ Who's hungry? 🚀
 
 **Media:** Demo video of searching "biryani" in Gemini CLI → getting restaurant results
 
+**What to record:**
+1. Open Gemini CLI
+2. Type `/zomato:find biryani`
+3. Show restaurant results with names, ratings, delivery time
+4. Show the order confirmation
+
 ---
 
 ### Day 2 - How It Works
@@ -39,6 +45,9 @@ Sometimes the smartest solutions are the simplest hacks. 💡
 ```
 
 **Media:** Screenshot of the MCP config in VSCode
+
+**What to screenshot:**
+1. Show `claude_desktop_config.json` with mcpServers: zomato-mcp
 
 ---
 
@@ -63,6 +72,11 @@ And get back to coding. That's the point. 🎯
 ```
 
 **Media:** Before/after workflow comparison
+
+**What to create:**
+1. Create a simple 2-panel meme:
+   - Left: Phone → Zomato App → Browse → Order (5 min)
+   - Right: CLI → /zomato:find → Food (30 sec)
 
 ---
 
@@ -92,6 +106,11 @@ No more repetitive searching. The agent remembers. 🔮
 
 **Media:** Demo of setting preferences and ordering with one prompt
 
+**What to record:**
+1. Show typing preferences to Claude Desktop
+2. Say "get me dinner"
+3. Show agent automatically finding and ordering
+
 ---
 
 ### Day 5 - Support for Multiple Tools
@@ -113,6 +132,11 @@ Your AI assistant is now your food assistant. 🍕
 ```
 
 **Media:** Logos/memes of each tool
+
+**What to create:**
+1. Simple graphic with all 5 tools listed
+2. Use tool logos or emojis
+3. Green check for working, yellow for beta
 
 ---
 
@@ -137,6 +161,11 @@ Tag a developer who needs this in their life 🙌
 
 **Media:** Project GitHub star counts, repo link screenshot
 
+**What to screenshot:**
+1. GitHub repo page
+2. Star count (if any)
+3. Clone count (if any)
+
 ---
 
 ## What Pics/Videos to Create
@@ -158,6 +187,86 @@ Tag a developer who needs this in their life 🙌
 
 ### Day 6 - Repository Hero
 - GitHub repo screenshot with stars/forks
+
+---
+
+## 3 Bonus Posts (Day 7-9)
+
+### Day 7 - Behind the Scenes
+
+**Hook:** "The OAuth challenge no one talks about."
+
+**Content:**
+```
+The problem I couldn't solve:
+
+Zomato's OAuth only works with:
+→ Claude.ai
+→ VSCode.dev
+→ ChatGPT
+
+Not Gemini CLI. Not Claude Code CLI.
+
+So I built a local proxy server using mcp-remote.
+It reads the token from Claude Desktop and forwards requests.
+
+Sometimes the best code is code that solves YOUR problem first. 🎯
+```
+
+**Media:** Architecture diagram OR simple flow chart
+
+---
+
+### Day 8 - Developer Lifestyle
+
+**Hook:** "This is how coding sessions go now."
+
+**Content:**
+```
+Coding session v2.0:
+
+11:00 AM — Coffee + /zomato:find dosa
+12:30 PM — Food arrives
+12:35 PM — Back to coding
+03:00 PM — /zomato:find chai + samosa
+06:00 PM — /zomato:order dinner
+
+Zero context switching.
+Zero phone picking.
+100% productivity. ☕️→💻→🍔
+
+Your IDE just became a food delivery app.
+```
+
+**Media:** Timeline graphic OR funny coder meme
+
+---
+
+### Day 9 - Community Shoutout
+
+**Hook:** "Thank you to everyone who tested."
+
+**Content:**
+```
+1 week ago, this was just an idea.
+Today, FoodForDevs has:
+
+🚀 X developers using it
+🍕 Y orders placed
+💻 Z CLI tools supported
+
+Thank you to everyone who:
+→ Tested the MCP config
+→ Found bugs
+→ Suggested features
+→ Tagged their dev friends
+
+This is just the beginning. Here's to building in public. 🥂
+
+#BuildInPublic #Startups #DeveloperTools
+```
+
+**Media:** Testimonial quotes OR engagement screenshot
 
 ---
 
