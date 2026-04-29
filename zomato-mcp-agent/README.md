@@ -1,8 +1,18 @@
-# FoodForDevs 🍔
+# Zomato MCP Agent 🍔
 
 > "The best code is written after lunch." — Every Developer
 
-Order food from your terminal using Zomato MCP.
+A local MCP proxy server that wraps Zomato's remote HTTP MCP for use with Claude Desktop, Claude Code, Gemini CLI, Codex, and OpenCode.
+
+## Supported Tools
+
+| Tool | Status | Install |
+|------|--------|--------|
+| Claude Desktop | ✅ Working | https://claude.com/download |
+| Claude Code CLI | ✅ Working | `npm install -g @anthropic-ai/claude-code` |
+| Gemini CLI | ✅ Working | `npm install -g @google/gemini-cli` |
+| Codex (VSCode AI) | 🔄 Beta | VSCode Insiders + AI features |
+| OpenCode | 🔄 Beta | https://opencode.ai |
 
 ## Quick Start
 
@@ -37,14 +47,14 @@ Press `Cmd + Q` to quit, then reopen.
 
 ### 4. Sign In
 
-In Claude Desktop chat, type:
+In the chat, type:
 ```
 find pizza restaurants
 ```
 
 Browser opens - **login with your regular Zomato phone number**.
 
-### 5. Start Gemini CLI
+### 5. Start CLI
 
 ```bash
 # Navigate to this project directory
@@ -69,8 +79,6 @@ Set your preferences once, and let the agent handle the rest!
 
 ### Tell the Agent Your Preferences
 
-Just share your food preferences with the agent:
-
 **Example:**
 ```
 My preferences:
@@ -83,28 +91,10 @@ My preferences:
 ```
 
 The agent remembers this and will:
-
-1. **Search smart** - Find restaurants matching your taste
-2. **Recommend smart** - Suggest based on your favorites
-3. **Order smart** - Place orders matching your budget
-4. **Track automatically** - Keep you updated
-
-### How It Works
-
-**Tell the agent once:**
-```
-Tonight I want something for dinner
-```
-
-The agent will:
-- Find restaurants you like
-- Show you menu options
-- Add your usual order to cart
-- Ask to confirm
-- Place the order
-- Track until delivery
-
-**That's it!** No need to search every time.
+1. Search smart
+2. Recommend smart
+3. Order smart
+4. Track automatically
 
 ---
 
@@ -125,7 +115,7 @@ The agent will:
 ## Troubleshooting
 
 ### Not getting OAuth prompt?
-- Quit Claude Desktop completely (Cmd + Q)
+- Quit the tool completely
 - Reopen and try again
 
 ### Token expired?
@@ -133,7 +123,7 @@ The agent will:
 
 ### Commands not working?
 - Make sure you have internet connection
-- Try restarting Claude Desktop
+- Try restarting the tool
 
 ---
 

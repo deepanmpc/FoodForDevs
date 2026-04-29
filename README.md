@@ -4,11 +4,25 @@
 
 Order food from your terminal using Zomato MCP.
 
+## Supported Tools
+
+| Tool | Status |
+|------|--------|
+| Claude Desktop | ✅ Working |
+| Claude Code CLI | ✅ Working |
+| Gemini CLI | ✅ Working |
+| Codex (VSCode AI) | 🔄 Beta |
+| OpenCode | 🔄 Beta |
+
 ## Quick Start
 
-### 1. Install Claude Desktop
+### 1. Install Any Supported Tool
 
-Download: https://claude.com/download
+- **Claude Desktop**: https://claude.com/download
+- **Claude Code**: `npm install -g @anthropic-ai/claude-code`
+- **Gemini CLI**: `npm install -g @google/gemini-cli`
+- **Codex**: Install VSCode Insiders, enable AI features
+- **OpenCode**: https://opencode.ai
 
 ### 2. Setup Zomato MCP
 
@@ -31,27 +45,27 @@ cat > ~/Library/Application\ Support/Claude/claude_desktop_config.json << 'EOF'
 EOF
 ```
 
-### 3. Restart Claude Desktop
+### 3. Restart the Tool
 
 Press `Cmd + Q` to quit, then reopen.
 
 ### 4. Sign In
 
-In Claude Desktop chat, type:
+In the chat, type:
 ```
 find pizza restaurants
 ```
 
 Browser opens - **login with your regular Zomato phone number**.
 
-### 5. Start Gemini CLI
+### 5. Start CLI
 
 ```bash
 # Navigate to this project directory
 cd /path/to/FoodForDevs
 
-# Start Gemini CLI
-gemini
+# Start your preferred CLI
+gemini    # or: claude, codex, opencode
 ```
 
 ### 6. Order Food!
@@ -70,8 +84,6 @@ Set your preferences once, and let the agent handle the rest!
 
 ### Tell the Agent Your Preferences
 
-Just share your food preferences with the agent:
-
 **Example:**
 ```
 My preferences:
@@ -83,8 +95,7 @@ My preferences:
 - Budget: ₹500-800 per person
 ```
 
-The agent remembers this and will:
-
+The agent will:
 1. **Search smart** - Find restaurants matching your taste
 2. **Recommend smart** - Suggest based on your favorites
 3. **Order smart** - Place orders matching your budget
@@ -97,15 +108,7 @@ The agent remembers this and will:
 Tonight I want something for dinner
 ```
 
-The agent will:
-- Find restaurants you like
-- Show you menu options
-- Add your usual order to cart
-- Ask to confirm
-- Place the order
-- Track until delivery
-
-**That's it!** No need to search every time.
+The agent will handle everything automatically!
 
 ---
 
