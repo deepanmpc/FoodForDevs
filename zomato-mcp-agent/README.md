@@ -47,7 +47,9 @@ Browser opens - **login with your regular Zomato phone number**.
 ### 5. Start Gemini CLI
 
 ```bash
-cd /Users/deepandee/Desktop/FoodForDevs
+# Navigate to this project directory
+cd /path/to/FoodForDevs
+
 gemini
 ```
 

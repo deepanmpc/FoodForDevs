@@ -2,7 +2,7 @@
   "mcpServers": {
     "zomato": {
       "command": "node",
-      "args": ["/Users/deepandee/Desktop/FoodForDevs/zomato-mcp-agent/dist/index.js"],
+      "args": ["ABSOLUTE_PATH_TO/zomato-mcp-agent/dist/index.js"],
       "trust": false
     }
   }
