@@ -2,17 +2,15 @@
 
 > "The best code is written after lunch." — Every Developer
 
-A local MCP proxy server that wraps Zomato's remote HTTP MCP for use with Claude Desktop, Claude Code, Gemini CLI, Codex, and OpenCode.
+A local MCP proxy server that wraps Zomato's remote HTTP MCP.
 
 ## Supported Tools
 
-| Tool | Status | Install |
-|------|--------|--------|
-| Claude Desktop | ✅ Working | https://claude.com/download |
-| Claude Code CLI | ✅ Working | `npm install -g @anthropic-ai/claude-code` |
-| Gemini CLI | ✅ Working | `npm install -g @google/gemini-cli` |
-| Codex (VSCode AI) | 🔄 Beta | VSCode Insiders + AI features |
-| OpenCode | 🔄 Beta | https://opencode.ai |
+- **Claude Desktop** — ✅ Working — [Download](https://claude.com/download)
+- **Claude Code** — ✅ Working — `npm install -g @anthropic-ai/claude-code`
+- **Gemini CLI** — ✅ Working — `npm install -g @google/gemini-cli`
+- **Codex** — 🔄 Beta — VSCode Insiders + AI features
+- **OpenCode** — 🔄 Beta — [opencode.ai](https://opencode.ai)
 
 ## Quick Start
 
@@ -41,7 +39,7 @@ cat > ~/Library/Application\ Support/Claude/claude_desktop_config.json << 'EOF'
 EOF
 ```
 
-### 3. Restart Claude Desktop
+### 3. Restart the Tool
 
 Press `Cmd + Q` to quit, then reopen.
 
@@ -57,9 +55,7 @@ Browser opens - **login with your regular Zomato phone number**.
 ### 5. Start CLI
 
 ```bash
-# Navigate to this project directory
 cd /path/to/FoodForDevs
-
 gemini
 ```
 
@@ -90,11 +86,11 @@ My preferences:
 - Budget: ₹500-800 per person
 ```
 
-The agent remembers this and will:
-1. Search smart
-2. Recommend smart
-3. Order smart
-4. Track automatically
+The agent will:
+- Search smart
+- Recommend smart
+- Order smart
+- Track automatically
 
 ---
 
@@ -109,21 +105,6 @@ The agent remembers this and will:
 | `/zomato:cancel <order_id>` | Cancel order |
 | `/zomato:pay <order_id>` | Get payment |
 | `/zomato:status <order_id>` | Track order |
-
----
-
-## Troubleshooting
-
-### Not getting OAuth prompt?
-- Quit the tool completely
-- Reopen and try again
-
-### Token expired?
-- Simply log in again when prompted
-
-### Commands not working?
-- Make sure you have internet connection
-- Try restarting the tool
 
 ---
 

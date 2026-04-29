@@ -6,23 +6,17 @@ Order food from your terminal using Zomato MCP.
 
 ## Supported Tools
 
-| Tool | Status |
-|------|--------|
-| Claude Desktop | ✅ Working |
-| Claude Code CLI | ✅ Working |
-| Gemini CLI | ✅ Working |
-| Codex (VSCode AI) | 🔄 Beta |
-| OpenCode | 🔄 Beta |
+- **Claude Desktop** — ✅ Working — [Download](https://claude.com/download)
+- **Claude Code** — ✅ Working — `npm install -g @anthropic-ai/claude-code`
+- **Gemini CLI** — ✅ Working — `npm install -g @google/gemini-cli`
+- **Codex** — 🔄 Beta — VSCode Insiders + AI features
+- **OpenCode** — 🔄 Beta — [opencode.ai](https://opencode.ai)
 
 ## Quick Start
 
 ### 1. Install Any Supported Tool
 
-- **Claude Desktop**: https://claude.com/download
-- **Claude Code**: `npm install -g @anthropic-ai/claude-code`
-- **Gemini CLI**: `npm install -g @google/gemini-cli`
-- **Codex**: Install VSCode Insiders, enable AI features
-- **OpenCode**: https://opencode.ai
+Pick one from the list above.
 
 ### 2. Setup Zomato MCP
 
