@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "zomato": {
+      "command": "node",
+      "args": ["/Users/deepandee/Desktop/FoodForDevs/zomato-mcp-agent/dist/index.js"],
+      "trust": false
+    }
+  }
+}

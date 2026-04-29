@@ -1,0 +1,14 @@
+description = "Place a Zomato order end-to-end — /zomato:order "
+prompt = """
+Help me place a Zomato order. My request: {{args}}
+
+Execute these steps using the zomato MCP tools:
+1. Search for the restaurant if not already selected
+2. Fetch the menu and identify the right items
+3. Add items to cart, confirm quantities
+4. Show cart summary with total price
+5. Place the order
+6. Return: order confirmation, order ID, estimated delivery time
+
+Ask me before placing if anything is unclear.
+"""

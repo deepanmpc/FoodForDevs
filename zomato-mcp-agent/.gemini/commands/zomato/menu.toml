@@ -1,0 +1,5 @@
+description = "Browse a restaurant's menu — /zomato:menu "
+prompt = """
+Use the zomato MCP tools to fetch the full menu for restaurant ID: {{args}}
+Group items by category. For each item show: item ID, name, description, price, rating.
+"""

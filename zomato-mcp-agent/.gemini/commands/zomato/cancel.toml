@@ -1,0 +1,5 @@
+description = "Cancel your order — /zomato:cancel "
+prompt = """
+Use the zomato MCP tools to cancel order ID: {{args}}
+Check if the order can be cancelled (not already delivered). Show confirmation.
+"""

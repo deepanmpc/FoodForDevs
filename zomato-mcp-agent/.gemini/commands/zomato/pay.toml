@@ -1,0 +1,5 @@
+description = "Pay for an order via QR code — /zomato:pay "
+prompt = """
+Use the zomato MCP tools to get QR code payment details for order ID: {{args}}
+Display the QR code / payment link and all instructions clearly.
+"""

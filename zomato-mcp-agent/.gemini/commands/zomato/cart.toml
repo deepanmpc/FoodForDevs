@@ -1,0 +1,5 @@
+description = "Add item to cart — /zomato:cart "
+prompt = """
+Use the zomato MCP tools to add item {{args}} to cart.
+Ask for quantity if not provided. Confirm and show cart total.
+"""

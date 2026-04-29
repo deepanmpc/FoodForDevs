@@ -1,0 +1,5 @@
+description = "Track your order — /zomato:status "
+prompt = """
+Use the zomato MCP tools to get live tracking for order ID: {{args}}
+Show: current status, delivery stage, ETA, delivery partner name and contact.
+"""

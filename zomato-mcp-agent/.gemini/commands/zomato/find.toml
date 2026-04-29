@@ -1,0 +1,7 @@
+description = "Find nearby Zomato restaurants — /zomato:find "
+prompt = """
+Use the zomato MCP tools to find restaurants near my current location.
+Search query: {{args}}
+Show restaurant name, rating, cuisine type, delivery time estimate, and restaurant ID.
+Format as a numbered list so I can easily pick one.
+"""
