@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 - Agentic Ordering</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    background: #04080f;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .left-panel {
+    padding: 50px 50px 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #0f1f16;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    color: #10b981;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    width: fit-content;
+  }
+
+  .pill::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: #10b981;
+  }
+
+  .desc {
+    font-size: 13px;
+    color: #3d5a4a;
+    line-height: 1.8;
+    max-width: 340px;
+  }
+
+  .right-panel {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .chat-section-label {
+    font-size: 10px;
+    color: #1e3a2a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .msg {
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+
+  .msg.user {
+    background: #0a1f15;
+    border: 1px solid #0f3020;
+    color: #7dd3a8;
+    align-self: flex-end;
+    max-width: 95%;
+  }
+
+  .msg.agent {
+    background: #061810;
+    border: 1px solid #0a2818;
+    color: #4ade80;
+  }
+
+  .msg .speaker {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0.5;
+  }
+
+  .msg.user .speaker { color: #10b981; }
+  .msg.agent .speaker { color: #4ade80; }
+
+  .agent-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .agent-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #4ade80;
+  }
+
+  .check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(74,222,128,0.15);
+    border: 1px solid rgba(74,222,128,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="glow"></div>
+  <div class="layout">
+    <div class="left-panel">
+      <div class="pill">Agentic Mode</div>
+      <h1>Set it<br>once.<br><em>Forget</em> it.</h1>
+      <p class="desc">
+        Tell your AI agent your food preferences once.
+        It remembers. It learns. It orders.
+        You just keep building.
+      </p>
+    </div>
+    <div class="right-panel">
+      <div class="msg user">
+        <div class="speaker">You (once)</div>
+        I love chicken biryani, less spicy.<br>
+        Budget around ₹400. Favourite: Paradise Biryani.
+      </div>
+      <div style="height:4px"></div>
+      <div class="msg user">
+        <div class="speaker">You (weeks later)</div>
+        Get me dinner 🍔
+      </div>
+      <div class="msg agent">
+        <div class="speaker">Agent</div>
+        <div class="agent-steps">
+          <div class="agent-step"><span class="check">✓</span> Searching Paradise Biryani near you…</div>
+          <div class="agent-step"><span class="check">✓</span> Found: Chicken Dum Biryani ₹340 (less spicy)</div>
+          <div class="agent-step"><span class="check">✓</span> Within budget. ETA: 24 minutes.</div>
+          <div class="agent-step"><span class="check">✓</span> Placing order…</div>
+          <div class="agent-step"><span class="check">✓</span> <strong>Done! Order #ZO8821 confirmed. 🎉</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

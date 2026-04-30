@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 6 - Call to Action</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    background: #ff6400;
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Big diagonal text bg */
+  .bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.07);
+    letter-spacing: -10px;
+    user-select: none;
+    transform: rotate(-5deg);
+    white-space: nowrap;
+  }
+
+  .card {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 50px 60px;
+    width: 760px;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .headline span { color: #ff6400; }
+
+  .subline {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .steps-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+
+  .step-chip {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  .step-chip .arrow {
+    color: #ff6400;
+    font-size: 16px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: #ff6400;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary {
+    background: #2a2a2a;
+    color: #888;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .github-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #444;
+    margin-top: 28px;
+  }
+
+  .github-link span { color: #ff6400; }
+
+  .corner-tag {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6400;
+    color: #fff;
+    padding: 6px 20px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-text">GO</div>
+  <div class="card">
+    <div class="corner-tag">🎉 OPEN SOURCE · FREE · NOW LIVE</div>
+    <div class="headline">Clone. Setup.<br>Order. <span>Ship.</span></div>
+    <div class="subline">The only food ordering setup that makes you more productive.</div>
+    <div class="steps-row">
+      <div class="step-chip">git clone</div>
+      <div class="step-chip"><span class="arrow">→</span></div>
+      <div class="step-chip">npm install</div>
+      <div class="step-chip"><span class="arrow">→</span></div>
+      <div class="step-chip">./setup.sh</div>
+      <div class="step-chip"><span class="arrow">→</span></div>
+      <div class="step-chip">🍔 Eat</div>
+    </div>
+    <div class="cta-row">
+      <div class="btn-primary">⭐ Star on GitHub</div>
+      <div class="btn-secondary">2 min setup • No API keys</div>
+    </div>
+    <div class="github-link">github.com/<span>deepanmpc</span>/FoodForDevs</div>
+  </div>
+</body>
+</html>
