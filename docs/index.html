@@ -180,6 +180,18 @@
 
         footer span { color: var(--black); font-weight: 700; }
 
+        .cta-btn {
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .cta-btn:hover { opacity: 0.9; }
+
         @media (max-width: 768px) {
             h1 { font-size: 42px; }
             .card { padding: 40px 20px; }
@@ -204,9 +216,9 @@
         </div>
 
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://github.com/deepanmpc/FoodForDevs" target="_blank" style="text-decoration: none; background: var(--orange); color: var(--text-white); padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;">⭐ Star on GitHub</a>
-            <div onclick="contributeAlert()" style="background: var(--text-white); color: var(--black); padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;">🤝 Contribute</div>
-            <div style="background: var(--step-bg); padding: 12px 24px; border-radius: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 14px;">2 min setup • No API keys</div>
+            <a href="https://github.com/deepanmpc/FoodForDevs" target="_blank" class="cta-btn" style="background: var(--orange); color: var(--text-white);">⭐ Star on GitHub</a>
+            <a href="javascript:void(0)" onclick="contributeAlert()" class="cta-btn" style="background: var(--text-white); color: var(--black);">🤝 Contribute</a>
+            <div style="background: var(--step-bg); padding: 12px 24px; border-radius: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 14px; display: inline-block;">2 min setup • No API keys</div>
         </div>
     </div>
 
@@ -257,6 +269,7 @@
     function resizeIframe() {
         const display = document.getElementById('display');
         const frame = document.getElementById('frame');
+        if (!display || !frame) return;
         const scale = display.offsetWidth / 1200;
         frame.style.transform = `scale(${scale})`;
     }
