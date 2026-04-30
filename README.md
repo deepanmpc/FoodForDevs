@@ -1,26 +1,48 @@
 # FoodForDevs 🍔
 
-> "The best code is written after lunch." — Every Developer
+[![GitHub Stars](https://img.shields.io/github/stars/deepanmpc/FoodForDevs?style=social)](https://github.com/deepanmpc/FoodForDevs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 
-Order food from your terminal using Zomato MCP.
+**"The best code is written after lunch."**
 
-## Supported Tools
+FoodForDevs is the first terminal-native, personalised food ordering bridge. Stop losing your flow state to phone apps—order your favorite meals directly from your IDE in under 30 seconds.
 
-- **Claude Desktop** — ✅ Working — [Download](https://claude.com/download)
-- **Claude Code** — ✅ Working — `npm install -g @anthropic-ai/claude-code`
-- **Gemini CLI** — ✅ Working — `npm install -g @google/gemini-cli`
-- **Codex** — 🔄 Beta — VSCode Insiders + AI features
-- **OpenCode** — 🔄 Beta — [opencode.ai](https://opencode.ai)
+![FoodForDevs Hero](docs/assets/hero.png)
 
-## Quick Start
+---
 
-### 1. Install Any Supported Tool
+## 🧠 The Problem: Context Destruction
+Flow state is a developer's superpower. Every time you switch to your phone to browse Zomato, you don't just lose 8 minutes—you lose your momentum.
 
-Pick one from the list above.
+**Food ordering lacks true personalization and seamless integration into daily workflows.**
 
-### 2. Setup Zomato MCP
+![Before vs After](docs/assets/before-after.png)
 
-Run in terminal:
+---
+
+## 🛠️ The Solution
+We built a bridge between Zomato's ecosystem and your favorite AI CLIs using the **Model Context Protocol (MCP)**. Your AI assistant now understands your taste, remembers your preferences, and handles the logistics.
+
+![The Stack](docs/assets/stack.png)
+
+### One Project. Five Tools.
+Write the integration once, use it everywhere. FoodForDevs works out of the box with:
+- **Claude Desktop** (Stable)
+- **Claude Code CLI** (Stable)
+- **Gemini CLI** (Stable)
+- **Codex** (Beta)
+- **OpenCode** (Beta)
+
+![Supported Tools](docs/assets/tools.png)
+
+---
+
+## ⚡ Quick Start (2-Min Setup)
+
+No API keys. No subscriptions. No friction.
+
+### 1. Install Zomato MCP
+Run this command to add the server to your Claude configuration:
 
 ```bash
 cat > ~/Library/Application\ Support/Claude/claude_desktop_config.json << 'EOF'
@@ -39,71 +61,36 @@ cat > ~/Library/Application\ Support/Claude/claude_desktop_config.json << 'EOF'
 EOF
 ```
 
-### 3. Restart the Tool
+### 2. Sign In
+Type `find pizza restaurants` in any supported tool. A browser will open—login with your Zomato phone number once.
 
-Press `Cmd + Q` to quit, then reopen.
-
-### 4. Sign In
-
-In the chat, type:
-```
-find pizza restaurants
-```
-
-Browser opens - **login with your regular Zomato phone number**.
-
-### 5. Start CLI
-
+### 3. Start Ordering
 ```bash
-# Navigate to this project directory
-cd /path/to/FoodForDevs
-
-# Start your preferred CLI
-gemini    # or: claude, codex, opencode
-```
-
-### 6. Order Food!
-
-```
 /zomato:find biryani
-/zomato:menu 12345
-/zomato:order chicken biryani
+/zomato:menu [restaurant_id]
+/zomato:order [dish_name]
 ```
 
 ---
 
-## Agentic Ordering 🔮
+## 🔮 Agentic Magic
+Set your preferences once and let the agent handle the rest.
 
-Set your preferences once, and let the agent handle the rest!
+> "Tonight I want something for dinner"
 
-### Tell the Agent Your Preferences
-
-**Example:**
-```
-My preferences:
-- I love biryani, especially chicken biryani
-- Prefer less spicy food
-- My favorite restaurants: Paradise Biryani, Behrouz
-- Usually order for 2 people
-- Delivery within 3km
-- Budget: ₹500-800 per person
-```
-
-The agent will:
-1. **Search smart** - Find restaurants matching your taste
-2. **Recommend smart** - Suggest based on your favorites
-3. **Order smart** - Place orders matching your budget
-4. **Track automatically** - Keep you updated
-
-### How It Works
-
-**Tell the agent once:**
-```
-Tonight I want something for dinner
-```
-
-The agent will handle everything automatically!
+The agent will automatically:
+1. **Search Smart** based on your chicken/veg/spice preferences.
+2. **Recommend** from your favorite spots like Paradise or Behrouz.
+3. **Budget** within your ₹500-800 range.
+4. **Track** the delivery for you.
 
 ---
 
-## Done! Enjoy your food! 🍕
+## 🤝 Contribute
+We are building the future of agentic commerce. If you love the idea of seamless, AI-driven ordering, we'd love your help!
+
+1. ⭐ **Star** this repo to show your support.
+2. 🍴 **Fork** and submit a PR for new features.
+3. 💬 **Suggest** new integrations in the Issues.
+
+Built with ❤️ by [Deepan](https://github.com/deepanmpc)
