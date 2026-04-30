@@ -203,8 +203,9 @@
             </div>
         </div>
 
-        <div style="display: flex; gap: 15px; justify-content: center;">
-            <div style="background: var(--orange); padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;">⭐ Star on GitHub</div>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://github.com/deepanmpc/FoodForDevs" target="_blank" style="text-decoration: none; background: var(--orange); color: var(--text-white); padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;">⭐ Star on GitHub</a>
+            <div onclick="contributeAlert()" style="background: var(--text-white); color: var(--black); padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;">🤝 Contribute</div>
             <div style="background: var(--step-bg); padding: 12px 24px; border-radius: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 14px;">2 min setup • No API keys</div>
         </div>
     </div>
@@ -258,6 +259,11 @@
         const frame = document.getElementById('frame');
         const scale = display.offsetWidth / 1200;
         frame.style.transform = `scale(${scale})`;
+    }
+
+    function contributeAlert() {
+        alert("We are creating an agentic platform for ordering food! We would love for you to contribute.");
+        window.open("https://github.com/deepanmpc/FoodForDevs", "_blank");
     }
 
     window.addEventListener('resize', resizeIframe);
