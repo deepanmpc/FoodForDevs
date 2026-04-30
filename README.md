@@ -11,7 +11,7 @@ FoodForDevs is the first terminal-native, personalised food ordering bridge. Sto
 
 ---
 
-## 🧠 The Problem: Context Destruction
+## The Problem: Context Destruction
 Flow state is a developer's superpower. Every time you switch to your phone to browse Zomato, you don't just lose 8 minutes—you lose your momentum.
 
 **Food ordering lacks true personalization and seamless integration into daily workflows.**
@@ -20,7 +20,7 @@ Flow state is a developer's superpower. Every time you switch to your phone to b
 
 ---
 
-## 🛠️ The Solution
+##  The Solution
 We built a bridge between Zomato's ecosystem and your favorite AI CLIs using the **Model Context Protocol (MCP)**. Your AI assistant now understands your taste, remembers your preferences, and handles the logistics.
 
 ![The Stack](docs/assets/stack.png)
@@ -37,7 +37,7 @@ Write the integration once, use it everywhere. FoodForDevs works out of the box 
 
 ---
 
-## ⚡ Quick Start (2-Min Setup)
+##  Quick Start (2-Min Setup)
 
 No API keys. No subscriptions. No friction.
 
@@ -73,7 +73,7 @@ Type `find pizza restaurants` in any supported tool. A browser will open—login
 
 ---
 
-## 🔮 Agentic Magic
+##  Agentic Magic
 Set your preferences once and let the agent handle the rest.
 
 > "Tonight I want something for dinner"
@@ -91,6 +91,6 @@ We are building the future of agentic commerce. If you love the idea of seamless
 
 1. ⭐ **Star** this repo to show your support.
 2. 🍴 **Fork** and submit a PR for new features.
-3. 💬 **Suggest** new integrations in the Issues.
+3.  **Suggest** new integrations in the Issues.
 
 Built with ❤️ by [Deepan](https://github.com/deepanmpc)
