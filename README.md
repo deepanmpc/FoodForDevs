@@ -3,7 +3,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/deepanmpc/FoodForDevs?style=social)](https://github.com/deepanmpc/FoodForDevs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 
-**"The best code is written after lunch."**
+                                                                      **"The best code is written after lunch."**
 
 FoodForDevs is the first terminal-native, personalised food ordering bridge. Stop losing your flow state to phone apps—order your favorite meals directly from your IDE in under 30 seconds.
 
