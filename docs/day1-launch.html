@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 1 - FoodForDevs Launch</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@300;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    overflow: hidden;
+    background: #0a0a0a;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,100,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,100,0,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glow-left {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,100,0,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 0 70px;
+    width: 100%;
+  }
+
+  .left {
+    flex: 1;
+  }
+
+  .tag {
+    display: inline-block;
+    background: rgba(255,100,0,0.15);
+    border: 1px solid rgba(255,100,0,0.4);
+    color: #ff6400;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    animation: blink 2s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  h1 span {
+    color: #ff6400;
+  }
+
+  .sub {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+  }
+
+  .cmd-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-left: 3px solid #ff6400;
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #ccc;
+  }
+
+  .cmd-box .prompt { color: #ff6400; }
+  .cmd-box .cmd { color: #fff; }
+  .cmd-box .output { color: #4ade80; font-size: 13px; margin-top: 8px; }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 340px;
+  }
+
+  .stat-card {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.3s;
+  }
+
+  .stat-card:hover { border-color: #ff6400; }
+
+  .icon {
+    font-size: 24px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,100,0,0.1);
+    border-radius: 8px;
+  }
+
+  .stat-info .label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 2px; }
+  .stat-info .value { font-size: 16px; color: #fff; font-weight: 700; margin-top: 2px; }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff6400, transparent);
+    animation: slide 3s ease-in-out infinite;
+  }
+
+  @keyframes slide {
+    0% { opacity: 0; transform: scaleX(0); }
+    50% { opacity: 1; transform: scaleX(1); }
+    100% { opacity: 0; transform: scaleX(0); }
+  }
+
+  .brand {
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="glow-left"></div>
+<div class="container">
+  <div class="left">
+    <div class="tag">🚀 JUST SHIPPED</div>
+    <h1>Food<span>For</span><br>Devs</h1>
+    <p class="sub">Order food without leaving your terminal.</p>
+    <div class="cmd-box">
+      <span class="prompt">$</span> <span class="cmd">/zomato:find biryani</span>
+      <div class="output">
+        ✓ Paradise Biryani — ★4.8 — 22 min — ₹280<br>
+        ✓ Behrouz Biryani — ★4.6 — 28 min — ₹340
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="stat-card">
+      <div class="icon">💻</div>
+      <div class="stat-info">
+        <div class="label">Works with</div>
+        <div class="value">Claude · Gemini · Codex</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">⚡</div>
+      <div class="stat-info">
+        <div class="label">Setup time</div>
+        <div class="value">Under 2 minutes</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🔑</div>
+      <div class="stat-info">
+        <div class="label">API Keys needed</div>
+        <div class="value">Zero. None. Nada.</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🍔</div>
+      <div class="stat-info">
+        <div class="label">Orders placed</div>
+        <div class="value">Without leaving VS Code</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar"></div>
+<div class="brand">github.com/deepanmpc/FoodForDevs</div>
+</body>
+</html>

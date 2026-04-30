@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 7 - The OAuth Hack</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    background: #08080f;
+    font-family: 'Space Mono', monospace;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    position: relative;
+  }
+
+  .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .top-left .eyebrow {
+    font-size: 10px;
+    color: #a855f7;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .top-left h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .top-left h2 span { color: #a855f7; }
+
+  .problem-box {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    max-width: 280px;
+    font-size: 11px;
+    color: #ef4444;
+    line-height: 1.7;
+  }
+
+  .problem-box .label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+  }
+
+  .node {
+    background: #0f0f1e;
+    border: 1px solid #1e1e3a;
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+    min-width: 140px;
+    flex-shrink: 0;
+  }
+
+  .node .icon { font-size: 26px; display: block; margin-bottom: 8px; }
+  .node .name { font-size: 12px; color: #fff; font-weight: 700; }
+  .node .sub { font-size: 10px; color: #444; margin-top: 3px; }
+
+  .node.highlight {
+    border-color: #a855f7;
+    background: rgba(168,85,247,0.08);
+    position: relative;
+  }
+
+  .node.highlight::after {
+    content: 'THE HACK';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #a855f7;
+    color: #fff;
+    font-size: 9px;
+    padding: 2px 10px;
+    border-radius: 100px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .arrow-seg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 50px;
+  }
+
+  .arrow-line {
+    height: 2px;
+    width: 100%;
+    position: relative;
+  }
+
+  .arrow-line.works { background: #10b981; }
+  .arrow-line.blocked { background: #ef4444; }
+  .arrow-line.bridged { background: #a855f7; }
+
+  .arrow-line::after {
+    content: '▶';
+    position: absolute;
+    right: -6px;
+    top: -8px;
+    font-size: 12px;
+  }
+
+  .arrow-line.works::after { color: #10b981; }
+  .arrow-line.blocked::after { color: #ef4444; }
+  .arrow-line.bridged::after { color: #a855f7; }
+
+  .arrow-label {
+    font-size: 9px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .arrow-line.works ~ .arrow-label { color: #10b981; }
+  .arrow-line.blocked ~ .arrow-label { color: #ef4444; }
+  .arrow-line.bridged ~ .arrow-label { color: #a855f7; }
+
+  .x-mark {
+    font-size: 14px;
+    color: #ef4444;
+    margin: 4px 0;
+  }
+
+  .solution-row {
+    margin-top: 20px;
+    background: rgba(168,85,247,0.06);
+    border: 1px solid rgba(168,85,247,0.2);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    color: #c4b5fd;
+  }
+
+  .solution-row .icon { font-size: 20px; }
+  .solution-row strong { color: #a855f7; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="top-left">
+      <div class="eyebrow">Behind the scenes</div>
+      <h2>The OAuth<br><span>Challenge</span><br>We Solved</h2>
+    </div>
+    <div class="problem-box">
+      <div class="label">The Problem</div>
+      Zomato's OAuth only whitelists<br>
+      <strong>Claude.ai</strong>, <strong>VSCode.dev</strong>, and <strong>ChatGPT</strong>.<br><br>
+      Gemini CLI and Claude Code CLI?<br>
+      Blocked. 🚫
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="node">
+      <span class="icon">💻</span>
+      <div class="name">Gemini CLI</div>
+      <div class="sub">Your terminal</div>
+    </div>
+
+    <div class="arrow-seg">
+      <div class="arrow-line blocked"></div>
+      <span class="arrow-label">Blocked</span>
+      <div class="x-mark">✕</div>
+    </div>
+
+    <div class="node highlight">
+      <span class="icon">🔁</span>
+      <div class="name">mcp-remote</div>
+      <div class="sub">Local proxy bridge</div>
+    </div>
+
+    <div class="arrow-seg">
+      <div class="arrow-line bridged"></div>
+      <span class="arrow-label">Bridged</span>
+    </div>
+
+    <div class="node">
+      <span class="icon">🔐</span>
+      <div class="name">Claude Desktop</div>
+      <div class="sub">Whitelisted OAuth</div>
+    </div>
+
+    <div class="arrow-seg">
+      <div class="arrow-line works"></div>
+      <span class="arrow-label">Works</span>
+    </div>
+
+    <div class="node">
+      <span class="icon">🍕</span>
+      <div class="name">Zomato MCP</div>
+      <div class="sub">mcp-server.zomato.com</div>
+    </div>
+  </div>
+
+  <div class="solution-row">
+    <span class="icon">💡</span>
+    <div>
+      <strong>The solution:</strong> Token is obtained once via Claude Desktop's whitelisted OAuth flow,
+      then stored at <code>~/.zomato-token</code> and forwarded by our local proxy to any CLI tool.
+    </div>
+  </div>
+</body>
+</html>

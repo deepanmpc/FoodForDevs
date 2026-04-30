@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 - Tech Stack</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    background: #060612;
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 360px;
+    background: #0c0c1e;
+    border-right: 1px solid #1a1a3e;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 32px;
+    position: relative;
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #4f46e5, transparent);
+  }
+
+  .sidebar-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #4f46e5;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .sidebar h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .sidebar h2 span { color: #4f46e5; }
+
+  .sidebar p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .badge {
+    margin-top: auto;
+    background: rgba(79,70,229,0.15);
+    border: 1px solid rgba(79,70,229,0.3);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 11px;
+    color: #818cf8;
+  }
+
+  .badge .num { font-size: 24px; font-weight: 700; color: #fff; display: block; }
+
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .main-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #4f46e5;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .layer {
+    background: #0c0c1e;
+    border: 1px solid #1a1a3e;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .layer::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+
+  .layer.l1::before { background: #4f46e5; }
+  .layer.l2::before { background: #7c3aed; }
+  .layer.l3::before { background: #a855f7; }
+  .layer.l4::before { background: #ec4899; }
+  .layer.l5::before { background: #f97316; }
+
+  .layer-num {
+    font-size: 10px;
+    color: #333;
+    min-width: 20px;
+  }
+
+  .layer-icon {
+    font-size: 22px;
+    min-width: 36px;
+    text-align: center;
+  }
+
+  .layer-info { flex: 1; }
+  .layer-name { font-size: 14px; font-weight: 600; color: #fff; }
+  .layer-desc { font-size: 11px; color: #555; margin-top: 2px; }
+
+  .layer-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    color: #666;
+    white-space: nowrap;
+  }
+
+  .arrow {
+    text-align: center;
+    color: #1a1a3e;
+    font-size: 12px;
+    margin: -4px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-label">Architecture</div>
+    <h2>The <span>Stack</span><br>Behind It</h2>
+    <p>5 layers. Zero unnecessary complexity. Every piece chosen for a reason.</p>
+    <div class="badge">
+      <span class="num">5</span>
+      AI tools supported out of the box
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-label">Tech Stack — Bottom to Top</div>
+    <div class="layer l5">
+      <span class="layer-num">05</span>
+      <span class="layer-icon">🍕</span>
+      <div class="layer-info">
+        <div class="layer-name">Zomato API</div>
+        <div class="layer-desc">Real-time restaurant data, menus, and order management</div>
+      </div>
+      <span class="layer-tag">Remote MCP Server</span>
+    </div>
+    <div class="arrow">↑</div>
+    <div class="layer l4">
+      <span class="layer-num">04</span>
+      <span class="layer-icon">🔐</span>
+      <div class="layer-info">
+        <div class="layer-name">mcp-remote + OAuth</div>
+        <div class="layer-desc">Handles auth bridge for non-whitelisted tools</div>
+      </div>
+      <span class="layer-tag">The Clever Hack</span>
+    </div>
+    <div class="arrow">↑</div>
+    <div class="layer l3">
+      <span class="layer-num">03</span>
+      <span class="layer-icon">⚙️</span>
+      <div class="layer-info">
+        <div class="layer-name">MCP Protocol</div>
+        <div class="layer-desc">Model Context Protocol — write once, run everywhere</div>
+      </div>
+      <span class="layer-tag">Open Standard</span>
+    </div>
+    <div class="arrow">↑</div>
+    <div class="layer l2">
+      <span class="layer-num">02</span>
+      <span class="layer-icon">🧠</span>
+      <div class="layer-info">
+        <div class="layer-name">TypeScript + Node.js</div>
+        <div class="layer-desc">Local proxy server with STDIO transport</div>
+      </div>
+      <span class="layer-tag">Runtime</span>
+    </div>
+    <div class="arrow">↑</div>
+    <div class="layer l1">
+      <span class="layer-num">01</span>
+      <span class="layer-icon">💬</span>
+      <div class="layer-info">
+        <div class="layer-name">Claude / Gemini / Codex CLI</div>
+        <div class="layer-desc">Your existing AI tool — no new apps needed</div>
+      </div>
+      <span class="layer-tag">User Layer</span>
+    </div>
+  </div>
+</body>
+</html>
