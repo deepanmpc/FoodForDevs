@@ -3,165 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodForDevs — Order food from your terminal</title>
+    <title>FoodForDevs — The Flow-Safe Food Orderer</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 
         :root {
             --orange: #ff6400;
-            --dark: #0a0a0b;
-            --surface: #121214;
-            --border: #1f1f23;
-            --text: #e1e1e6;
-            --muted: #8d8d99;
-            --white: #ffffff;
+            --black: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-white: #ffffff;
+            --text-muted: #888888;
+            --step-bg: #2a2a2a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: var(--dark);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--orange);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 24px;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
         }
 
-        /* Hero Section */
-        header {
+        /* Large Background Text Effect */
+        .bg-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            font-size: 30vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            white-space: nowrap;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Main Hero Card */
+        .card {
+            background: var(--card-bg);
+            border-radius: 32px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             text-align: center;
-            margin-bottom: 100px;
+            margin-bottom: 40px;
+            position: relative;
         }
 
         .badge {
-            display: inline-block;
-            background: rgba(255, 100, 0, 0.1);
-            border: 1px solid rgba(255, 100, 0, 0.2);
-            color: var(--orange);
-            padding: 6px 16px;
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--orange);
+            padding: 8px 24px;
             border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 24px;
         }
 
         h1 {
             font-size: 64px;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
         }
 
         h1 span { color: var(--orange); }
 
-        .lead {
-            font-size: 20px;
-            color: var(--muted);
+        .description {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 300;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 40px;
         }
 
-        /* Problem/Solution/Impact Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-bottom: 120px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 24px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 100, 0, 0.3);
-        }
-
-        .card-icon {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-
-        .card p {
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        /* Campaign Showcase */
-        .showcase-header {
-            text-align: center;
+        /* Section Layout */
+        .section {
             margin-bottom: 60px;
+            text-align: left;
         }
 
-        .showcase-header h2 {
-            font-size: 36px;
+        .section-title {
+            font-size: 24px;
             font-weight: 700;
-            color: var(--white);
-            margin-bottom: 12px;
+            color: var(--orange);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-white);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Showcase Section */
+        .showcase-card {
+            background: var(--card-bg);
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 40px;
         }
 
         .day-selector {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 32px;
         }
 
         .day-btn {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--muted);
-            padding: 10px 20px;
+            background: var(--step-bg);
+            border: none;
+            color: var(--text-muted);
+            padding: 12px 18px;
             border-radius: 12px;
-            cursor: pointer;
             font-family: 'JetBrains Mono', monospace;
             font-size: 13px;
+            cursor: pointer;
             transition: all 0.2s ease;
         }
 
-        .day-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--muted);
-        }
+        .day-btn:hover { background: #333; color: #fff; }
+        .day-btn.active { background: var(--orange); color: #fff; font-weight: 700; }
 
-        .day-btn.active {
-            background: var(--orange);
-            border-color: var(--orange);
-            color: var(--white);
-            font-weight: 700;
-        }
-
-        .visual-display {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            overflow: hidden;
+        .display-container {
+            width: 100%;
             aspect-ratio: 1200 / 628;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .visual-display iframe {
+        .display-container iframe {
             width: 1200px;
             height: 628px;
             border: 0;
@@ -171,58 +170,47 @@
             transform-origin: top left;
         }
 
-        /* Footer */
         footer {
             text-align: center;
-            margin-top: 100px;
-            padding-top: 40px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 14px;
+            padding: 40px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        footer a { color: var(--orange); text-decoration: none; }
+        footer span { color: var(--black); font-weight: 700; }
 
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-            h1 { font-size: 40px; }
-            .container { padding: 40px 16px; }
+            h1 { font-size: 42px; }
+            .card { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="badge">Built for Flow State</div>
-        <h1>Food<span>For</span>Devs</h1>
-        <p class="lead">The best code is written after lunch. Order your favorite meals without ever leaving your terminal.</p>
-    </header>
+<div class="bg-text">FOOD</div>
 
-    <div class="grid">
-        <div class="card">
-            <div class="card-icon">🧠</div>
-            <h3>What I'm Solving</h3>
-            <p>Flow state is fragile. Switching to a phone or browser to order food takes 8+ minutes and breaks focus. I'm eliminating that friction.</p>
+<div class="container">
+    <div class="card">
+        <div class="badge">🚀 OPEN SOURCE · FREE · NOW LIVE</div>
+        <h1>The Problem: <span>Distraction.</span></h1>
+        <p class="description">Flow state is the developer's superpower. Every time you switch to your phone to order food, you lose 8-10 minutes of deep focus.</p>
+        
+        <div class="section">
+            <h2 class="section-title"><span>💡</span> Our Solution</h2>
+            <div class="section-content">
+                We built <strong>FoodForDevs</strong> — a terminal-native ordering bridge. Using the Model Context Protocol (MCP), your AI assistant now understands food. Search, browse menus, and order directly from your IDE in <strong>under 30 seconds</strong>.
+            </div>
         </div>
-        <div class="card">
-            <div class="card-icon">🛠️</div>
-            <h3>What I Built</h3>
-            <p>A Model Context Protocol (MCP) bridge that connects Zomato's ecosystem directly to AI CLIs like Claude, Gemini, and Codex.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">⚡</div>
-            <h3>The Impact</h3>
-            <p>Developers stay in their IDE. Orders are placed in < 30 seconds. One standard integration works across all modern AI developer tools.</p>
+
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <div style="background: var(--orange); padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;">⭐ Star on GitHub</div>
+            <div style="background: var(--step-bg); padding: 12px 24px; border-radius: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 14px;">2 min setup • No API keys</div>
         </div>
     </div>
 
-    <section id="campaign">
-        <div class="showcase-header">
-            <h2>The 9-Day Journey</h2>
-            <p style="color: var(--muted)">Explore the features and architecture through our campaign visuals.</p>
-        </div>
-
+    <div class="showcase-card">
+        <h2 style="text-align: center; margin-bottom: 24px;">The 9-Day Campaign</h2>
         <div class="day-selector">
             <button class="day-btn active" onclick="loadDay(1, this)">DAY 01</button>
             <button class="day-btn" onclick="loadDay(2, this)">DAY 02</button>
@@ -235,13 +223,13 @@
             <button class="day-btn" onclick="loadDay(9, this)">DAY 09</button>
         </div>
 
-        <div class="visual-display" id="display">
+        <div class="display-container" id="display">
             <iframe src="day1-launch.html" id="frame"></iframe>
         </div>
-    </section>
+    </div>
 
     <footer>
-        <p>Built by <a href="https://github.com/deepanmpc">Deepan</a> • Star on <a href="https://github.com/deepanmpc/FoodForDevs">GitHub</a></p>
+        github.com/<span>deepanmpc</span>/FoodForDevs
     </footer>
 </div>
 
@@ -259,15 +247,10 @@
     };
 
     function loadDay(day, btn) {
-        // Update iframe
         const frame = document.getElementById('frame');
         frame.src = dayFiles[day];
-        
-        // Update buttons
         document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        
-        // Trigger resize
         resizeIframe();
     }
 
